@@ -3,23 +3,14 @@ package com.cv.srm.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-
-import static org.springframework.security.config.Customizer.withDefaults;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-public class SecurityConfiguration {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        /*http
-                .authorizeHttpRequests((authz) -> authz
-                        .anyRequest().authenticated()
-                )
-                .httpBasic(withDefaults());*/
-
-        http.httpBasic().disable().csrf().disable();
-        return http.build();
+    @Override
+    protected void configure(HttpSecurity security) throws Exception {
+        security.httpBasic().disable();
+        security.csrf().disable();
     }
-
 }

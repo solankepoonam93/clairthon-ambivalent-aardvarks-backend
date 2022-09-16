@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RnRTrackerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(RnRTrackerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RnRTrackerApplication.class, args);
+    }
 
 }
