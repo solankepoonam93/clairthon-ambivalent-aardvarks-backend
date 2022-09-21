@@ -34,8 +34,7 @@ jobs:
 
     - name: Copy Jar File to S3 bucket
       run: aws s3 sync ./target/ s3://clairthon --delete --exclude "*" --include "RnR*"
-  
-  Deploy:
+      
     - name:  Deploy to EC2
       env:
         PRIVATE_KEY: ${{ secrets.AWS_EC2_PRIVATE_KEY }}
