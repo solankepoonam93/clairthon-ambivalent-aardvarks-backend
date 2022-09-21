@@ -49,4 +49,3 @@ jobs:
         chmod +x deploy.sh
         sh deploy.sh'
         rm -rf private_key.pem
-
