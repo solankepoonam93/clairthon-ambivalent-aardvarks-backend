@@ -17,7 +17,7 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.cv.srm.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -29,7 +29,7 @@ public class SwaggerConfiguration {
      */
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                .title("Classroom Service")
+                .title("RnRTrackerApp")
                 .version("v1")
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
