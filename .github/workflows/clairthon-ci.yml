@@ -42,10 +42,5 @@ jobs:
         HOSTNAME: 43.204.246.173
       run: |
         echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
-        ssh -o StrictHostKeyChecking=accept-new -i private_key.pem ${USER_NAME}@${HOSTNAME}
-        ls
-        aws s3 cp s3://clairthon/RnRTracker-0.0.1-SNAPSHOT.jar ~/artifacts/
-        sudo chmod 600 ~/artifacts/*.jar
-        cd ~/artifacts/
-        java -jar RnRTracker-0.0.1-SNAPSHOT.jar
+        ssh -o StrictHostKeyChecking=accept-new -i private_key.pem ${USER_NAME}@${HOSTNAME} && ls && aws s3 cp s3://clairthon/RnRTracker-0.0.1-SNAPSHOT.jar ~/artifacts/ && sudo chmod 600 ~/artifacts/*.jar && cd ~/artifacts/ && java -jar RnRTracker-0.0.1-SNAPSHOT.jar
 
