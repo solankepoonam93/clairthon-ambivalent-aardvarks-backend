@@ -49,3 +49,9 @@ jobs:
         chmod +x deploy.sh
         sh deploy.sh'
         rm -rf private_key.pem
+    - name: Waiting for the API Response
+      env:
+        HOSTNAME: 43.204.246.173
+      run: |
+        sleep 30
+        curl "$HOSTNAME":/RnRTrackerApp/test/
