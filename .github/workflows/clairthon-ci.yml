@@ -54,4 +54,4 @@ jobs:
         HOSTNAME: 43.204.246.173
       run: |
         sleep 30
-        curl "$HOSTNAME":/RnRTrackerApp/test/
+        curl http://"$HOSTNAME":8080/RnRTrackerApp/test/
