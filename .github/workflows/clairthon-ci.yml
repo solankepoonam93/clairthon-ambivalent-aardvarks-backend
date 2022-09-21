@@ -41,7 +41,6 @@ jobs:
         USER_NAME: admin
         HOSTNAME: 43.204.246.173
       run: |
-        cd /home/admin/
         echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
         ssh -o StrictHostKeyChecking=accept-new -i private_key.pem ${USER_NAME}@${HOSTNAME}
         ls
