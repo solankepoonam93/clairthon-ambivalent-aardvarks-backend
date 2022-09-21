@@ -1,5 +1,5 @@
 server:
-  address: 43.204.246.173
+  address: 0.0.0.0
   servlet:
     context-path: /RnRTrackerApp
 
