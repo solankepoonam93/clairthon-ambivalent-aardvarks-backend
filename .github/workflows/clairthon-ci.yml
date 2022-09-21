@@ -33,4 +33,4 @@ jobs:
         aws-region: ap-south-1
 
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync target/*.jar s3://clairthon --delete
+      run: aws s3 sync target/RnRTracker-0.0.1-SNAPSHOT-jar-with-dependencies.jar s3://clairthon --delete
