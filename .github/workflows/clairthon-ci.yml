@@ -47,6 +47,6 @@ jobs:
         aws s3 cp s3://clairthon/RnRTracker-0.0.1-SNAPSHOT.jar ~/artifacts/
         sudo chmod 600 ~/artifacts/*.jar
         cd ~/artifacts/
-        java -jar RnRTracker-0.0.1-SNAPSHOT.jar'
+        nohup java -jar RnRTracker-0.0.1-SNAPSHOT.jar &'
         rm -rf private_key.pem
 
