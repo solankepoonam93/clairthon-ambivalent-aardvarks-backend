@@ -47,6 +47,6 @@ jobs:
         sudo chmod 600 ~/artifacts/*.jar
         cd ~/artifacts/
         chmod +x deploy.sh
-        sh deploy.sh > logs.txt'
+        sh deploy.sh'
         rm -rf private_key.pem
 
