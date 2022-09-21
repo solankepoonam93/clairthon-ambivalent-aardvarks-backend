@@ -43,11 +43,10 @@ jobs:
       run: |
         echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
         ssh -o StrictHostKeyChecking=no -i private_key.pem ${USER_NAME}@${HOSTNAME} '
-        ls
         aws s3 cp s3://clairthon/RnRTracker-0.0.1-SNAPSHOT.jar ~/artifacts/
         sudo chmod 600 ~/artifacts/*.jar
         cd ~/artifacts/
         chmod +x deploy.sh
-        sh deploy.sh'
+        sh deploy.sh > logs.txt'
         rm -rf private_key.pem
 
