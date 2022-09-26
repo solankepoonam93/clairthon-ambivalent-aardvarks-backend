@@ -1,9 +1,8 @@
 package com.cv.srm.service;
 
-import com.cv.srm.model.Category;
-import com.cv.srm.model.Designation;
-
 import java.util.List;
+
+import com.cv.srm.model.Category;
 
 public interface CategoryService {
 

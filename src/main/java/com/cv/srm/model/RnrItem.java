@@ -1,25 +1,39 @@
 package com.cv.srm.model;
 
-import lombok.*;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "RnrItem")
+@EqualsAndHashCode(callSuper=true)
 public class RnrItem extends AbstractModel {
 
-    @Column
-    private String focusAreaId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3896454901799763139L;
 
-    @Column
-    private String itemDesc;
-
-    @Column
-    private String url;
+	@JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="focusAreaId", nullable = false)
+    private FocusArea focusArea;
+	
+	
+	@Column(name = "description")
+    private String description;
+	
+	
+	@Column(name = "rating")
+    private Integer rating;
 
 }

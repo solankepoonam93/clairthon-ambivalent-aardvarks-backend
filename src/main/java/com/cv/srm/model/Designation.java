@@ -1,19 +1,24 @@
 package com.cv.srm.model;
 
-import lombok.*;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "Designation")
+@EqualsAndHashCode(callSuper=true)
 public class Designation extends AbstractModel {
 
-    @Column
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4840235535115282806L;
+
+	@Column
     private String name;
 
     @Column

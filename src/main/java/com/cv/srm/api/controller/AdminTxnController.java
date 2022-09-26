@@ -1,4 +1,4 @@
-package com.cv.srm.controller;
+package com.cv.srm.api.controller;
 
 import com.cv.srm.model.*;
 import com.cv.srm.service.*;
@@ -50,7 +50,7 @@ public class AdminTxnController {
     }
 
     @PostMapping("/rnrItem")
-    public RnrItem createRnrItem(@RequestBody RnrItem rnrItem) {
+    public Role createRnrItem(@RequestBody Role rnrItem) {
         return rnrItemServiceImpl.add(rnrItem);
     }
 
@@ -70,7 +70,7 @@ public class AdminTxnController {
     }
 
     @GetMapping("/rnrItems")
-    public List<RnrItem> getAllRnrItems() {
+    public List<Role> getAllRnrItems() {
         return rnrItemServiceImpl.getAllRnrItems();
     }
 
