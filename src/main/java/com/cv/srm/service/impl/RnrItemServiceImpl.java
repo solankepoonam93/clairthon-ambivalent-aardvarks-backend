@@ -1,6 +1,6 @@
 package com.cv.srm.service.impl;
 
-import com.cv.srm.model.RnrItem;
+import com.cv.srm.model.Role;
 import com.cv.srm.repository.RnrItemRepository;
 import com.cv.srm.service.RnrItemService;
 import org.springframework.stereotype.Service;
@@ -17,22 +17,22 @@ public class RnrItemServiceImpl implements RnrItemService {
     }
 
     @Override
-    public List<RnrItem> getAllRnrItems() {
+    public List<Role> getAllRnrItems() {
         return rnrItemRepository.findAll();
     }
 
     @Override
-    public RnrItem getDesignation(String rnrItemId) {
+    public Role getDesignation(String rnrItemId) {
         return rnrItemRepository.findById(rnrItemId).get();
     }
 
     @Override
-    public RnrItem add(RnrItem rnrItem) {
+    public Role add(Role rnrItem) {
         return rnrItemRepository.save(rnrItem);
     }
 
     @Override
-    public RnrItem update(RnrItem rnrItem) {
+    public Role update(Role rnrItem) {
         return rnrItemRepository.save(rnrItem);
     }
 }
