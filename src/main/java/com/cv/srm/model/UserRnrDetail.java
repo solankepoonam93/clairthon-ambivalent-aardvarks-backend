@@ -1,45 +1,53 @@
 package com.cv.srm.model;
 
-import lombok.*;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "UserRnrDetail")
+@EqualsAndHashCode(callSuper=true)
 public class UserRnrDetail extends AbstractModel {
 
-    @Column
-    private String userId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -9093989982354805453L;
 
-    @Column
-    private String rnrItemId;
+	@JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="userId")
+    private User user;
 
-    @Column
-    private String priority;
+	@JsonIgnore
+    @ManyToOne
+    @JoinColumn(name="rnrItemId")
+    private RnrItem rnrItem;
 
-    @Column
-    private String actionItem;
+    @Column(name = "status")
+    private String status;
 
-    @Column
-    private String actionItemStatus;
-
-    @Column
+    @Column(name = "handsOnExposure")
     private String handsOnExposure;
 
-    @Column
+    @Column(name = "selfRating")
     private Integer selfRating;
 
-    @Column
+    @Column(name = "selfReviewComments")
     private String selfReviewComments;
 
-    @Column
+    @Column(name = "managerRating")
     private Integer managerRating;
 
-    @Column
+    @Column(name = "managerReviewComments")
     private Integer managerReviewComments;
+    
 }

@@ -1,0 +1,101 @@
+## !.mvn/wrapper/maven-wrapper.jar
+## !**/src/main/**/target/
+## !**/src/test/**/target/
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+*.pydevproject
+.metadata
+tmp/
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/**
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Maven ###
+log/
+target/
+dist/
+target/
+.mvn/
+mvn*
+
+### Package Files ###
+*.jar
+*.war
+*.ear
+*.db
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+### Mac OSX ###
+.DS_Store
+.svn
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### Directories ###
+/build/
+/bin/
+/deploy/
+
+### Logs ###
+*.log
+
+### Others ###
+*.class
+*.*~
+*~
+.merge_file*
+
+### Maven Wrapper ###
+!.mvn/wrapper/maven-wrapper.jar
+
+### ESLint ###
+.eslintcache

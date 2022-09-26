@@ -1,61 +1,52 @@
 package com.cv.srm.model;
 
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
+import static com.cv.srm.util.DateUtil.getUTCZonedDateTime;
 
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 
-import static com.cv.srm.util.DateUtil.getUTCZonedDateTime;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+
+@Data
 @MappedSuperclass
-@Getter
-@Setter
 public class AbstractModel implements Serializable {
 
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @NotNull
-    @Column(nullable = false, length = 36)
-    protected String id;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2018144731445558752L;
 
-    @CreatedBy
-    @Column(name = "created_by", nullable = false, length = 36, updatable = false)
+	@Id
+    @Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected Integer id;
+
     @JsonIgnore
-    @NotNull
+	@Column(name = "createdBy", nullable = false, length = 36)
     private String createdBy;
 
-    @CreatedDate
-    @Column(name = "created_date", nullable = false)
     @JsonIgnore
-    @NotNull
+    @Column(name = "createdDate", nullable = false)
     private ZonedDateTime createdDate;
 
-    @LastModifiedBy
-    @Column(name = "modified_by", length = 36, nullable = false)
     @JsonIgnore
-    @NotNull
+    @Column(name = "modifiedBy", length = 36, nullable = false)
     private String modifiedBy;
 
-    @LastModifiedDate
-    @Column(name = "modified_date", nullable = false)
     @JsonIgnore
-    @NotNull
+    @Column(name = "modifiedDate", nullable = false)
     private ZonedDateTime modifiedDate;
 
-    @PrePersist
+    //@PrePersist
     void onCreate() throws Exception {
         this.setCreatedDate(getUTCZonedDateTime());
         this.setModifiedDate(getUTCZonedDateTime());
@@ -63,7 +54,7 @@ public class AbstractModel implements Serializable {
         this.setModifiedBy("Admin");
     }
 
-    @PreUpdate
+    //@PreUpdate
     void onPersist() {
         this.setModifiedDate(getUTCZonedDateTime());
         this.setModifiedBy("Admin");
