@@ -13,11 +13,7 @@
 	<artifactId>RnRTracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RnRTracker</name>
-<<<<<<< Updated upstream
 	<packaging>jar</packaging>
-=======
-	<!-- <packaging>jar</packaging> -->
->>>>>>> Stashed changes
 	<description>Demo project for Spring Boot RnRTracker</description>
 	<properties>
 		<java.version>11</java.version>
